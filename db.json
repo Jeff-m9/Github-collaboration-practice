@@ -1,0 +1,19 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Bildad",
+      "stream": "1 West"
+    },
+    {
+      "id": 2,
+      "name": "Jeff",
+      "stream": "4 East"
+    },
+    {
+      "id": 3,
+      "name": "carol",
+      "stream": "3 South"
+    }
+  ]
+}
