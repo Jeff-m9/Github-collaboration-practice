@@ -1,10 +1,31 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { useEffect, useState } from "react";
 
 function App() {
-  return ;
+  const [students, setStudents] = useState([]);
+
+  const handleFetch = () => {
+    fetch("http://localhost:3000/students")
+      .then((res) => res.json())
+      .then((data) => {
+        setStudents(data);
+        console.log(data)
+      });
+  };
+
+  useEffect(() => {
+    handleFetch()
+  }, []);
+
+  return (
+    <div>
+      {students.map((student) => (
+        <div key={student.id}>
+          <h1>{student.name}</h1>
+          <p>{student.stream}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default App;
